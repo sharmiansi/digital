@@ -1,0 +1,12 @@
+[
+    {
+        "name": "Github",
+        "link": "https://github.com/",
+        "image": "social/github.svg"
+    },
+    {
+        "name": "Twitter",
+        "link": "https://twitter.com/",
+        "image": "social/twitter.svg"
+    }
+]

@@ -1,0 +1,42 @@
+email: 'info@techwide.co'
+phone: '+971 4 501 5746'
+fax: '+971 4 501 5777'
+businessName: 'Hugo Serif'
+address: |
+  Techwide FZE
+  4th Floor, D Wing
+  HQ Building, 
+  Dubai Silicon Oasis
+  Dubai, UAE, PO Box: 341041
+
+#email: 'info@techwide.co'
+phone1: '+1 917 764 9911'
+fax1: ' +1 307 306 5852'
+address1: |
+  Techwide LLC
+  4283 Express Lane
+  Suite 6491-444, 
+  Sarasota
+  Florida 34249, USA
+hours:
+  - day: Monday
+    open: 8:30am
+    close: 5:00pm
+  - day: Tuesday
+    open: 8:30am
+    close: 5:00pm
+  - day: Wednesday
+    open: 8:30am
+    close: 5:00pm
+  - day: Thursday
+    open: 8:30am
+    close: 5:00pm
+  - day: Friday
+    open: 8:30am
+    close: 5:00pm
+  - day: Saturday
+    open: Closed
+    close:
+  - day: Sunday
+    open: Closed
+    close:
