@@ -32,8 +32,8 @@
         <li><strong>Email: </strong><a href="mailto:{{ .Site.Data.contact.email }}">
             {{ .Site.Data.contact.email }}</a></li>
         {{ end }}
-
-
+        
+        
       </ul>
     </div>
 
@@ -42,7 +42,7 @@
       <ul>
 
         {{ if .Site.Data.contact.address1 }}
-
+       
         <li style="white-space: pre-wrap;"><strong>USA Office: </strong><br>{{ .Site.Data.contact.address1 }}</li>
         {{ end }}
         <br>
@@ -52,115 +52,108 @@
         {{ if .Site.Data.contact.fax1 }}
         <li><strong>Fax: </strong>{{ .Site.Data.contact.fax1 }}</li>
         {{ end }}
-
+       
       </ul>
     </div>
   </div>
-
+ 
   {{ "<!--contactHeader.html-->" | safeHTML }}
-  <section class="text-justify">
-    <div class="container">
-      <div class="row">
-        <div class="col-12 py-2 intro intro-small">
-          <h1 class=""> {{ .Site.Data.contact.contactUs }}</h1>
-        </div>
-        <div class="col-12 py-2">
-          <p>{{ .Site.Data.contact.contactDes }}</p>
-
-        </div>
+<section class="text-justify">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 py-2 intro intro-small">
+        <h1 class=""> {{  .Site.Data.contact.contactUs }}</h1>
+      </div>
+      <div class="col-12 py-2">
+        <p>{{ .Site.Data.contact.contactDes }}</p>
+        
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  {{ "<!--contactForm.html-->" | safeHTML }}
-  <section class="contact">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 mx-auto">
-          <form id="contact-form" action="{{ .Site.Params.fabFormURL }}" method="POST" class="contact-form row">
-            <div class="col-lg-6 mb-3">
-              <input type="text" class="form-control" placeholder="Full Name" name="entry.1854710918" required />
-            </div>
-            <div class="col-lg-6 mb-3">
-              <input type="email" class="form-control" placeholder="Email" name="entry.1386646400" required />
-            </div>
-            <div class="col-12 mb-3">
-              <input type="text" class="form-control" placeholder="Subject" name="entry.2031113553" />
-            </div>
-            <div class="col-12 mb-3">
-              <textarea class="form-control" placeholder="Message" required cols="30" rows="7" name="entry.1977231329"></textarea>
-            </div>
-  
-            <!-- Add hidden honeypot input for spam prevention -->
-            <input type="hidden" name="_gotcha" style="display:none !important">
-  
-            <div class="col-12 text-center">
-              <button class="btn btn-primary" type="submit">
-                Submit
-              </button>
-            </div>
-            <div class="col-12 mt-3">
-              <p id="contact-form-status" style="display:none;"></p>
-            </div>
-          </form>
-        </div>
+{{ "<!--contactForm.html-->" | safeHTML }}
+<section class="contact">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 mx-auto">
+        <form id="contact-form" action="{{ .Site.Params.fabFormURL }}" method="POST" class="contact-form row">
+          <div class="col-lg-6 mb-3">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Full Name"
+              name="Name"
+              required
+            />
+          </div>
+          <div class="col-lg-6 mb-3">
+            <input
+              type="email"
+              class="form-control"
+              placeholder="Email"
+              name="email"
+              required
+            />
+          </div>
+          <div class="col-12 mb-3">
+            <input type="text" class="form-control" placeholder="Subject" name="subject" />
+          </div>
+          <div class="col-12 mb-3">
+            <textarea
+              class="form-control"
+              placeholder="Message"
+              required
+              cols="30"
+              rows="7"
+              name="message"
+            ></textarea>
+          </div>
+
+          
+             <!-- Add hidden honeypot input for spam prevention -->
+             <input type="hidden" name="_gotcha" style="display:none !important">
+         
+          
+          
+          <div class="col-12 text-center">
+            <button id="contact-form-button" class="btn btn-primary" type="submit" formtarget="_blank">
+              Submit
+            </button>
+          </div>
+          <div class="col-12 mt-3">
+            <p id="contact-form-status"></p>
+          </div>
+        </form>
       </div>
     </div>
-  </section>
-  
-  <script src="https://code.jquery.com/jquery-3.6.4.min.js" crossorigin="anonymous"></script>
+  </div>
+
   <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      document.getElementById("contact-form").addEventListener("submit", function (event) {
-        event.preventDefault(); // Prevent the form from submitting normally
-  
-        // Validation: Check if required fields are not empty
-        var fullName = document.querySelector('#contact-form input[name="entry.1854710918"]').value;
-        var email = document.querySelector('#contact-form input[name="entry.1386646400"]').value;
-        var message = document.querySelector('#contact-form textarea[name="entry.1977231329"]').value;
-  
-        if (!fullName || !email || !message) {
-          alert('Please fill in all required fields.');
-          return;
-        }
-  
-        // Google Forms URL (replace with your own form URL)
-        var formURL = "https://docs.google.com/forms/d/e/1FAIpQLSdS_oypvSWN_DeonyrN8QHCJbqYbwJmwRAS8F-2E5eQXMb3eQ/formResponse";
-  
-        // Serialize form data
-        var formData = new FormData(document.getElementById("contact-form"));
-  
-        // Submit the form using the fetch API
-        fetch(formURL, {
-          method: 'POST',
-          body: formData,
-        })
-          .then(function (response) {
-            if (!response.ok) {
-              throw new Error('Network response was not ok');
-            }
-            return response.text();
-          })
-          .then(function (data) {
-            // Your custom thank-you message
-            alert('Thank you for reaching out! Your message has been successfully submitted.');
-            // Redirect to your custom thank-you page after a brief delay (adjust as needed)
-            setTimeout(function () {
-              window.location.href = "/thank-you";
-            }, 2000); // 2000 milliseconds (2 seconds)
-          })
-          .catch(function (error) {
-            // Handle errors if the form submission fails
-            console.error('Form submission error:', error);
-          });
+    // Function to handle form submission
+    function submitForm() {
+      var form = document.getElementById("contact-form");
+
+      // Your additional form validation logic can be added here
+
+      // Submit the form using JavaScript's fetch API
+      fetch(form.action, {
+        method: form.method,
+        body: new FormData(form),
+      })
+      .then(response => {
+        // Handle the form submission response here (e.g., show success message)
+        document.getElementById("contact-form-status").innerText = "Form submitted successfully!";
+      })
+      .catch(error => {
+        // Handle errors here
+        console.error('Error submitting form:', error);
       });
-    });
+    }
   </script>
+</section>
+
   
-  
-
-
-
 </div>
 
 
