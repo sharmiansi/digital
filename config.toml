@@ -1,4 +1,4 @@
-baseURL = "https://www.example.com/"
+baseURL = ""
 languageCode = "en-us"
 title = "IT Solutions"
 theme = "hugo-hero-theme"
@@ -10,8 +10,8 @@ theme = "hugo-hero-theme"
     
 [params]
   google_analytics_id=""
-   background = "images/jason.webp"
-
+  background = "images/jason.webp"
+  fabFormURL = "https://formsubmit.co/sharmiansi@gmail.com"
   [params.logo]
     mobile = "images/logo-mobile.png"
     mobile_height = "36px"
@@ -39,15 +39,19 @@ theme = "hugo-hero-theme"
 
 [[menu.main]]
     name = "Solutions"
-    url = "/services/"
+    url = "/solution/"
     weight = 2
 
 
 [[menu.main]]
-    name = "Contact Us"
-    url = "/contact/"
+    name = "Services"
+    url = "/Services/"
     weight = 3
 
+[[menu.main]]
+    name = "Contact Us"
+    url = "/contact/"
+    weight = 4
 [permalinks]
   post = "/:year/:month/:day/:slug/"
   pages = "/:filename/"

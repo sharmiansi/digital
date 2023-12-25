@@ -1,7 +1,7 @@
 ---
 title: 'We Help Business Grow'
 weight: 1
-background: 'images/kevin-bhagat-461952-unsplash.jpg'
+background: 'images/image_business.webp'
 button: 'Our Work'
 buttonLink: 'work'
 ---
