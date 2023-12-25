@@ -109,6 +109,13 @@
               name="message"
             ></textarea>
           </div>
+
+          
+             <!-- Add hidden honeypot input for spam prevention -->
+             <input type="hidden" name="_gotcha" style="display:none !important">
+         
+          
+          
           <div class="col-12 text-center">
             <button id="contact-form-button" class="btn btn-primary" type="submit" formtarget="_blank">
               Submit
@@ -121,6 +128,29 @@
       </div>
     </div>
   </div>
+
+  <script>
+    // Function to handle form submission
+    function submitForm() {
+      var form = document.getElementById("contact-form");
+
+      // Your additional form validation logic can be added here
+
+      // Submit the form using JavaScript's fetch API
+      fetch(form.action, {
+        method: form.method,
+        body: new FormData(form),
+      })
+      .then(response => {
+        // Handle the form submission response here (e.g., show success message)
+        document.getElementById("contact-form-status").innerText = "Form submitted successfully!";
+      })
+      .catch(error => {
+        // Handle errors here
+        console.error('Error submitting form:', error);
+      });
+    }
+  </script>
 </section>
 
   
