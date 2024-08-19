@@ -1,0 +1,25 @@
+<!-- In the Name of Allah, the Merciful the Compassionate -->
+
+{{ with .Site.Data.resumeSection }}
+  {{ if .enable }}
+    <section class="section resume" id="resume">
+      <div class="resume__background"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="resume__heading">
+              
+              <div class="text-light">
+                <span class="top-title">{{ .topTitle }}</span>
+                {{ .title | markdownify }}
+              </div>
+
+              
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+  {{ end }}
+{{ end }}

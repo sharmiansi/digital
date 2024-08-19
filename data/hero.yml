@@ -1,0 +1,16 @@
+enable: true
+#topTitle: We Are Helmani!
+content: |
+  ## Compassionate Connections
+  ### Mental Health Care
+
+  - here to support your Mental Wellness Journey.
+  - BIPOC and LGBTQ2S+ supportive.
+  - Virtual only convenient care.
+
+buttonName: Book Now
+buttonURL: contact
+image: images/hero/girloncomputer.jpg
+videoThumb: images/hero/pistachios.jpg
+videoURL: 'https://youtu.be/1-NOOoqlvfA'
+_template: hero_template
