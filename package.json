@@ -52,6 +52,7 @@
     "@hyas/images": "^0.2.3",
     "@tinacms/cli": "^1.5.23",
     "bootstrap": "^4.6.2",
+    "popper.js": "^1.16.1",  
     "gsap": "1.20.5",
     "imagesloaded": "^5.0.0",
     "jquery": "^3.6.1",
