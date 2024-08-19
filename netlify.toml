@@ -1,9 +1,0 @@
-[build]
-  publish = "public"
-  command = "npm install && hugo --gc --minify"
-
-[build.environment]
-  NODE_VERSION = "16.16.0"
-  NPM_VERSION = "8.11.0"
-
-
